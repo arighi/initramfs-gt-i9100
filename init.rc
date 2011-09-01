@@ -25,7 +25,10 @@ loglevel 3
     export TMPDIR /data/local/tmp
 
 # Disable CFQ slice idle delay
-    write /sys/block/mmcblk0/queue/iosched/slice_idle 0
+    # write /sys/block/mmcblk0/queue/iosched/slice_idle 0
+
+# Set readahead to 512kb
+    write /sys/block/mmcblk0/queue/read_ahead_kb 512
 
 # Backward compatibility
     symlink /system/etc /etc
