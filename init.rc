@@ -111,10 +111,6 @@ loglevel 3
     # 5.0 %
     write /dev/cpuctl/bg_non_interactive/cpu.shares 52
 
-    # cpu bandwidth control (max 15% of total cpu bandwidth)
-    write /dev/cpuctl/bg_non_interactive/cpu.cfs_period_us 1000000
-    write /dev/cpuctl/bg_non_interactive/cpu.cfs_quota_us   150000
-
 
 # ko files for vibrator
     insmod /lib/modules/vibrator.ko
