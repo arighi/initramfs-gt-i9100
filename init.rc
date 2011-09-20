@@ -426,6 +426,19 @@ on boot
     write /proc/sys/vm/dirty_writeback_centisecs 1500
     write /proc/sys/vm/dirty_expire_centisecs 200
     write /proc/sys/vm/dirty_background_ratio  5
+
+    # Tweak networking for security
+    write /proc/sys/net/ipv4/tcp_ecn 0
+    write /proc/sys/net/ipv4/conf/default/rp_filter 1
+    write /proc/sys/net/ipv4/conf/all/accept_source_route 0
+    write /proc/sys/net/ipv4/conf/default/accept_source_route 0
+    write /proc/sys/net/ipv4/conf/all/accept_redirects 0
+    write /proc/sys/net/ipv4/conf/default/accept_redirects 0
+    write /proc/sys/net/ipv4/conf/all/secure_redirects 0
+    write /proc/sys/net/ipv4/conf/default/secure_redirects 0
+    write /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts 1
+    write /proc/sys/net/ipv6/conf/all/disable_ipv6 1
+
     write /sys/class/mdnieset_ui/switch_mdnieset_ui/mdnieset_init_file_cmd  0
 #    write /sys/class/mdnieset_ui/switch_mdnieset_ui/mdnieset_ui_file_cmd  0
 
